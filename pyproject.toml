@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-socketio"
+version = "0.9.0"
+description = ""
+authors = ["Srdjan Stankovic <stankovic.srdjo@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "~3.10"
+fastapi = ">=0.61.1"
+python-socketio = ">=4.6.0"
+tensorflow = "2.8.0"
+torch = "1.11.0"
+torchaudio = "0.11.0"
+torchvision = "0.12.0"
+conda-lock = "^1.0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
