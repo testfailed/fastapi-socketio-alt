@@ -11,10 +11,6 @@ dependencies:
   - mamba
   - pip  # pip must be mentioned explicitly, or conda-lock will fail
   - poetry=1.1.*  # or 1.1.*, or no version at all -- as you want
-  - tensorflow=2.8.0
-  - pytorch::pytorch=1.11.0
-  - pytorch::torchaudio=0.11.0
-  - pytorch::torchvision=0.12.0
 
 # Non-standard section listing target platforms for conda-lock:
 platforms:
