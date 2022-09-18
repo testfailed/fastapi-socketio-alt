@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-socketio"
-version = "0.9.0"
+version = "0.10.0"
 description = "Easly integrate socket.io with your FastAPI app."
 license = "Apache License, Version 2.0"
 authors = ["Srdjan Stankovic <stankovic.srdjo@gmail.com>"]
@@ -8,37 +8,24 @@ maintainers = ["Sumin Son <clvswft03@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/pyropy/fastapi-socketio"
 repository = "https://github.com/todaypp/fastapi-socketio"
-keywords = [
-    "python",
-    "websocket",
-    "socketio",
-    "fastapi",
-    "fastapi-socketio",
-]
-classifiers = [
-    "Framework :: FastAPI",
-    "Environment :: Web Environment",
-]
-packages = [
-    { include = "fastapi_socketio" },
-]
+keywords = ["python", "websocket", "socketio", "fastapi", "fastapi-socketio"]
+classifiers = ["Framework :: FastAPI", "Environment :: Web Environment"]
+packages = [{ include = "fastapi_socketio" }]
 
 [tool.poetry.dependencies]
-conda-lock = "^1.0.5"
-fastapi = ">=0.61.1"
-netifaces = ">=0.10.6"
-pydantic = ">=1.6.1"
 python = "~3.10"
-python-engineio = "*"
-python-socketio = ">=4.6.0"
-starlette = ">=0.13.6"
-uvicorn = "^0.18.2"
 
-[tool.poetry.dev-dependencies]
-jedi = "*"
-neovim = "*"
-pytest = ">=6.0.1"
+fastapi = "0.61.1"
+netifaces = "0.10.6"
+pydantic = "1.6.1"
+python-engineio = "3.14.2"
+python-socketio = "4.6.0"
+starlette = "0.13.6"
+uvicorn = "0.18.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "6.0.1"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
