@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi_socketio import SocketManager
 
+
 app = FastAPI()
 sio = SocketManager(app=app)
 
@@ -15,13 +16,14 @@ async def test(sid, *args, **kwargs):
     await sio.emit('hey', 'joe')
 
 
-
 if __name__ == '__main__':
     import logging
     import sys
 
-    logging.basicConfig(level=logging.DEBUG,
-                        stream=sys.stdout)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        stream=sys.stdout,
+    )
 
     import uvicorn
 
