@@ -13,9 +13,10 @@ classifiers = ["Framework :: FastAPI", "Environment :: Web Environment"]
 packages = [{ include = "fastapi_socketio" }]
 
 [tool.poetry.scripts]
-fastapi-socketio-example-app = "examples.app:main"
-python-socketio-example-client-threads-latency = "examples.client.threads.latency_client:main"
-python-socketio-example-server-asgi-latency = "examples.server.asgi.latency:main"
+example-app = "examples.app:main"
+example-client-threads-latency = "examples.client.threads.latency_client:main"
+example-server-asgi-latency = "examples.server.asgi.latency:main"
+example-server-fastapi-latency = "examples.server.fastapi.latency:main"
 
 [tool.poetry.dependencies]
 python = "~3.10"
