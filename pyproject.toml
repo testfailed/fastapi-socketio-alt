@@ -23,6 +23,9 @@ python-socketio = "4.6.1"
 starlette = "0.20.4"
 uvicorn = "0.18.3"
 
+[tool.poetry.group.dev.dependencies]
+black = { version = "22.8.0", allow-prereleases = true }
+
 [tool.poetry.group.test.dependencies]
 pytest = "6.0.2"
 

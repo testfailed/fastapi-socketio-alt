@@ -33,7 +33,7 @@ class SocketManager:
         )
 
         app.mount(mount_location, self._app)
-        app.sio = self._sio
+        app.sio = self._sio  # type: ignore
 
     def is_asyncio_based(self) -> bool:
         return True
