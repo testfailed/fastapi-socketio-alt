@@ -11,10 +11,13 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/smoothie/1.27.0/smoothie.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.min.js"></script>
+    <script src="//cdn.socket.io/4.5.0/socket.io.min.js"
+      integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+      crossorigin="anonymous"></script>
     <script>
       // socket
-      var socket = io.connect();
+      // var socket = io.connect();
+      var socket = io.connect('http://127.0.0.1:5000');
       var char = $('chart').get(0);
       socket.on('connect', function() {
           if (chart.getContext) {
@@ -23,16 +26,15 @@
           }
           send();
       });
-      socket.on('pong_from_server', function() {
+      socket.on('pong_from_server', function(data) {
           var latency = new Date - last;
           $('#latency').text(latency + 'ms');
-          if (time)
-              time.append(+new Date, latency);
+          if (time) time.append(+new Date, latency);
+          console.log(data);
           setTimeout(send, 100);
       });
       socket.on('disconnect', function() {
-          if (smoothie)
-              smoothie.stop();
+          if (smoothie) smoothie.stop();
           $('#transport').text('(disconnected)');
       });
 
@@ -47,8 +49,7 @@
       var smoothie;
       var time;
       function render() {
-          if (smoothie)
-              smoothie.stop();
+          if (smoothie) smoothie.stop();
           chart.width = document.body.clientWidth;
           smoothie = new SmoothieChart();
           smoothie.streamTo(chart, 1000);

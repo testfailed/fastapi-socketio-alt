@@ -21,8 +21,8 @@ def connect():
 
 
 @sio.event
-def pong_from_server(sid):
-    print(f"pong_from_server (sid=${sid})")
+def pong_from_server(data):
+    print(f"pong_from_server (sid=${data['sid']}, room=${data['room']})")
     global start_timer
     latency = time.time() - start_timer
     print("latency is {0:.2f} ms".format(latency * 1000))
@@ -32,7 +32,7 @@ def pong_from_server(sid):
 
 
 def main():
-    sio.connect("http://0.0.0.0:5000", socketio_path="/ws/socket.io")
+    sio.connect("http://127.0.0.1:5000")
     sio.wait()
 
 

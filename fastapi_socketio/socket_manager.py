@@ -21,7 +21,7 @@ class SocketManager:
     def __init__(
         self,
         app: FastAPI,
-        mount_location: str = "/ws",
+        mount_location: str = "/",
         socketio_path: str = "socket.io",
         cors_allowed_origins: Union[str, list] = "*",
         async_mode: str = "asgi",
