@@ -206,6 +206,7 @@ $RECYCLE.BIN/
 .github/backup/
 .mypy_cache/
 certificates/
+dist/
 scripts/.direnv_stdlib.sh
 
 *_bak/
