@@ -11,9 +11,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_socketio import SocketManager
 
 
-"""
-FastAPI Routers
-"""
+#
+# FastAPI Routers
+#
 
 
 app = FastAPI()
@@ -27,9 +27,9 @@ async def get_main():
     return FileResponse("static/latency.html", media_type="text/html")
 
 
-"""
-FastAPI-SocketIO
-"""
+#
+# FastAPI-SocketIO
+#
 
 
 sio = SocketManager(app=app)
@@ -48,9 +48,9 @@ async def ping_from_client(sid):
     )
 
 
-"""
-Uvicorn Server
-"""
+#
+# Uvicorn Server
+#
 
 
 def main():

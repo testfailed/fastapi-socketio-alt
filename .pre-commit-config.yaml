@@ -27,7 +27,6 @@ repos:
       - id: check-docstring-first
       - id: check-json
       - id: check-merge-conflict
-      - id: check-shebang-scripts-are-executable
       - id: check-toml
       - id: check-vcs-permalinks
       - id: check-xml
@@ -35,7 +34,6 @@ repos:
       - id: debug-statements
       - id: destroyed-symlinks
       - id: detect-private-key
-      - id: double-quote-string-fixer
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: fix-encoding-pragma
