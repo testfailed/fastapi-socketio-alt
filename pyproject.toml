@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "fastapi-socketio"
-version = "0.10.0"
-description = "Rebuild of fastapi-socket"
+version = "1.0.0"
+description = "Rebuild of fastapi-socket with latest dependency versions"
 license = "Apache License, Version 2.0"
 authors = [
-    "Srdjan Stankovic <stankovic.srdjo@gmail.com>",
     "Sumin Son <clvswft03@gmail.com>",
+    "Srdjan Stankovic <stankovic.srdjo@gmail.com>",
 ]
 maintainers = ["Sumin Son <clvswft03@gmail.com>"]
 readme = "README.md"
