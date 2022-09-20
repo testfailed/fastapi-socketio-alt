@@ -1,6 +1,30 @@
 .ONESHELL:
 ENV_PREFIX=$(shell python -c "if __import__('pathlib').Path('.venv/bin/pip').exists(): print('.venv/bin/')")
 
+#
+# General Commands
+#
+
+.PHONY: help
+help:				## Show the help.
+	@echo "Usage: make <target>"
+	@echo ""
+	@echo "Targets:"
+	@fgrep "##" Makefile | fgrep -v fgrep
+
+.PHONY: info
+info:				## Show the current environment.
+	@echo "Current poetry environment:"
+	@poetry env info
+	@echo ""
+	@echo "Running using $(ENV_PREFIX)"
+	@$(ENV_PREFIX)python -V
+	@echo ""
+	@$(ENV_PREFIX)python -m site
+#
+# Project Commands
+#
+
 .PHONY: build
 build:				## Build the project.
 	@poetry build -vvv
@@ -26,31 +50,15 @@ format:				## Format code using black & isort.
 	$(ENV_PREFIX)black fastapi_socketio/
 	$(ENV_PREFIX)black tests/
 
-.PHONY: help
-help:				## Show the help.
-	@echo "Usage: make <target>"
-	@echo ""
-	@echo "Targets:"
-	@fgrep "##" Makefile | fgrep -v fgrep
-
-.PHONY: info
-info:				## Show the current environment infomations.
-	@echo "Current environment:"
-	@if [ "$(USING_POETRY)" ]; then poetry env info && exit; fi
-	@poetry env info
-	@echo "Running using $(ENV_PREFIX)"
-	@$(ENV_PREFIX)python -V
-	@$(ENV_PREFIX)python -m site
-
 .PHONY: install
 install:			## Install the project in production environment.
-		poetry lock -vvv &&
-			poetry install -vvv
+	@poetry lock -vvv
+	@poetry install -vvv
 
 .PHONY: install-all
 install-all:			## Install the project in development environment.
-		poetry lock -vvv &&
-			poetry install --all-extras -vvv
+	@poetry lock -vvv
+	@poetry install --all-extras -vvv
 
 .PHONY: lint
 lint:				## Run black linter.
