@@ -33,7 +33,7 @@ python = "~3.10"
 
 fastapi = "0.85.0"
 netifaces = "0.11.0"
-pydantic = "1.10.2"
+pydantic = "1.10.7"
 python-engineio = "4.3.4"
 python-socketio = "5.7.1"
 requests = "2.28.1"
