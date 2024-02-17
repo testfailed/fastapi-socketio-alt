@@ -37,7 +37,7 @@ pydantic = "1.10.2"
 python-engineio = "4.3.4"
 python-socketio = "5.7.1"
 requests = "2.28.1"
-starlette = "0.20.4"
+starlette = "0.36.2"
 uvicorn = "0.18.3"
 
 [tool.poetry.group.dev.dependencies]
